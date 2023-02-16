@@ -20,16 +20,24 @@ function updatePhoneNumberPrice(newPhoneNumber) {
     phoneTotalElement.innerText = phoneTotalPrice;
 }
 
+
 document.getElementById('phone-plus-btn').addEventListener('click', function () {
 
     const newPhoneNumber = updatePhoneNumber(true);
     updatePhoneNumberPrice(newPhoneNumber);
 
+    // calculate total
+    calculateSubtotal()
+
+
 })
 document.getElementById('phone-minus-btn').addEventListener('click', function () {
-    
+
     const newPhoneNumber = updatePhoneNumber(false);
     updatePhoneNumberPrice(newPhoneNumber);
+
+    // calculate total
+    calculateSubtotal();
 })
 
 
